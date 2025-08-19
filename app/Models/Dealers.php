@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class Dealers extends Model
 {
-  use HasFactory, Notifiable, SoftDeletes;
+  use HasFactory, Notifiable, SoftDeletes, HasApiTokens;
 
   protected $fillable = [
     'tally_dealer_id',
@@ -25,6 +26,7 @@ class Dealers extends Model
     'password',
     'gst_no',
     'otp',
+    'otp_expired_at',
     'created_at',
     'updated_at',
   ];
